@@ -1,7 +1,9 @@
-import django
-django.setup()
+
 import os
+import django
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'basic_app.settings')
+django.setup()
 
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
@@ -62,3 +64,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
             'message': message,
             'sender': sender
         }))
+
+    # @database_sync_to_async
+    # def save_message(self, message):
+    #     room = ChatRoom.objects.get(name=self.room_name)
+    #     message = Message.objects.create(content=message, room=room)
+    #     # The post_save signal will be triggered here

@@ -70,7 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'basic_app.wsgi.application'
-
+CSRF_TRUSTED_ORIGINS = ['https://adf6-122-176-163-135.ngrok-free.app']
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

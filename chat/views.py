@@ -14,6 +14,9 @@ from django.shortcuts import get_object_or_404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
+from .signals import message_sent
+from django.dispatch import receiver
+
 global logged_user
 
 def login_view(request):
@@ -74,6 +77,13 @@ def chat(request, username):
         'other_user': other_user,
         'messages': messages
     })
+
+
+# @receiver(message_sent)
+# def update_chat_room_last_activity(sender, message, **kwargs):
+#     room = message.room
+#     room.last_activity = message.timestamp
+#     room.save()
 
 # @login_required
 # def chat(request, username):
