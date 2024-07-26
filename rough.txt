@@ -164,3 +164,18 @@ logged_user = Relation.objects.create(user1=user,user2=chat_id,message=message)
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+File "/home/snakescipt/.pyenv/versions/3.8.7/lib/python3.8/site-packages/django/db/models/base.py", line 134, in __new__
+    raise RuntimeError(
+RuntimeError: Model class auth.models.Room doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+
+i want room name to be auto incremented
+
+urls
+
+
+apps.populate(settings.INSTALLED_APPS)
+  File "/home/snakescipt/.pyenv/versions/3.8.7/lib/python3.8/site-packages/django/apps/registry.py", line 93, in populate
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Application labels aren't unique, duplicates: auth
